@@ -11,3 +11,14 @@
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+
+.git
+.DS_Store
+.RData
+.Rproj.user/*
+public.Rproj
+node_modules/
+_defaults/*
+_empty/*
+logs/*
+
