@@ -6720,7 +6720,7 @@ p.icon a a:link a:visited a:hover a:active {
 }
 /* -- /footer --*/
 /* -- Media --*/
-@media (min-width: 321px) and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .ixamin-svg-class {
     height: 98px;
     width: 98px;
@@ -6743,7 +6743,7 @@ p.icon a a:link a:visited a:hover a:active {
     margin-left: -85px;
   }
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 767px) {
   .ixamin-svg-class {
     height: 70px;
     width: 70px;
