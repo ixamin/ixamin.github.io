@@ -6685,7 +6685,7 @@ footer svg {
   vertical-align: middle;
   width: 40px;
 }
-a.icon a:link a:visited a:hover a:active {
+.icon a:link a:visited a:hover a:active {
   text-decoration: none;
 }
 svg#mark-ixamin g path,
