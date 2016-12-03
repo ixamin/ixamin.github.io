@@ -1,5 +1,5 @@
 # RStudio hidden project files
-.Rhistory
+.Rproj.user.Rhistory
 .Rapp.history
 .Rproj.user/
 .RData
@@ -31,6 +31,3 @@ _defaults/*
 _empty/*
 logs/*
 _site/*
-site_libs
-.
-.Rproj.user
