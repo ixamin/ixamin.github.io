@@ -12,6 +12,11 @@
 
 # Proect file
 ixamin.github.io.Rproj
+README.md
+
+# directories
+R/*
+assets/*
 
 # Example code in package build process
 *-Ex.R
@@ -25,5 +30,7 @@ node_modules/
 _defaults/*
 _empty/*
 logs/*
-
+_site/*
+site_libs
 .
+.Rproj.user
