@@ -8,26 +8,20 @@
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="msapplication-TileImage" content="/mstile-144x144.png">
         <meta name="author" content="Jonathan Hodge">
-        <meta name="dcterms.date" content="2016-12-03">
+        <meta name="dcterms.date" content="2016-12-04">
         <meta name="keywords" content="exploring data, cleaning data, visualizing data, business intelligence">
         <title>iXamin – Home</title>
-        <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-        <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico">
+                                <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
         <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
         <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
         <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
         <script src="site_libs/navigation-1.1/tabsets.js"></script>
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="shortcut icon" href="favicon.ico">
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-        <link rel="stylesheet" href="css/normalize.css">
+                <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -46,16 +40,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">ixamin.com <span style="color:red">(<em>BETA</em>)</span></a>
+            <a class="navbar-brand" href="/index.html">ixamin.com</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li id="home"><a href="/index.html">Home</a></li>
-              <li><a href="#l">About</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li class="dropdown-header">Previous</li>
                   <li><a href="#">Nothing to see here, folks.</a></li>
                   <li><a href="#">Move along...</a></li>
                   <li role="separator" class="divider"></li>
@@ -84,7 +76,7 @@
               <img class="fallback" src="ixamin.png" alt="ixamin mark">
             <!-- /Logo -->
             <!-- Blog Title -->
-            <p class="blog-title">iXamin <span style="color:red">(<em>BETA</em>)</span></p>
+            <p class="blog-title">iXamin</p>
             <p class="blog-description">Exploring, cleaning, and visualizing data.</p>
           </div>
           <!-- /Blog Title -->
@@ -93,18 +85,40 @@
         <h1 class="title">Ontario’s Electricity Rates</h1>
       </header>
             
-            <p class="subtitle">The highest province. (Only NWT is higher!)</p>
+            <p class="subtitle">Mixed with Water, an economic shock.</p>
             
             
-            <p class="date">2016-12-03</p>
+            <p class="date">2016-12-04</p>
             
-      <p><img src="index_files/figure-html/graphs-1.png" width="672" /><img src="index_files/figure-html/graphs-2.png" width="672" /><img src="index_files/figure-html/graphs-3.png" width="672" /><img src="index_files/figure-html/graphs-4.png" width="672" /><img src="index_files/figure-html/graphs-5.png" width="672" /><img src="index_files/figure-html/graphs-6.png" width="672" /></p>
+      <p>Ontario’s Time-of-Use rates have been steadily increasing, with the “On Peak” rate rising the most rapidly in the last three years.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a><br />
+      <img src="index_files/figure-html/Ontario_Electricity_Rates-1.png" width="672" /></p>
+      <p>In the same period, Ontario’s Electricity CPI has risen more rapidly than the Canadian average.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a><br />
+      <img src="index_files/figure-html/CA_ON_Elect_CPI-1.png" width="672" /></p>
+      <p>In 2015, Ontario had the highest provincial Electricity CPI variation from the country’s average. The Northwest Territories is the only region having a greater variation.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a><br />
+      <img src="index_files/figure-html/Provincial_Elec_CPI_Var-1.png" width="672" /></p>
+      <p>Nuclear power is the largest source of electricity in Ontario.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a><br />
+      <img src="index_files/figure-html/ON_Generating_Types-1.png" width="672" /></p>
+      <p>Nuclear fuel is about a third of the total provincial cost; hydrocarbon driven thermal electric generation costs the most.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a><br />
+      <img src="index_files/figure-html/ON_Generating_Fuel_Costs-1.png" width="672" /></p>
+      <p>Unless a household heats with electricity, the alternate typical heating sources are reflecting a lower recent Consumer Price Index. However, the CPI of water is higher and increasing faster than electricity.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a><br />
+      <img src="index_files/figure-html/ON_Utilities_CPI-1.png" width="672" /></p>
+      <div class="footnotes">
+      <hr />
+      <ol>
+      <li id="fn1"><p>Source: <a href="http://www.ontario-hydro.com/current-rates">ontario-hydro.com</a><a href="#fnref1">↩</a></p></li>
+      <li id="fn2"><p>Source: <a href="http://www.ontarioenergyboard.ca/oeb/Consumers/Electricity/Electricity%20Prices/Historical%20Electricity%20Prices">ontarioenergyboard.ca</a><a href="#fnref2">↩</a></p></li>
+      <li id="fn3"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref3">↩</a></p></li>
+      <li id="fn4"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref4">↩</a></p></li>
+      <li id="fn5"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref5">↩</a></p></li>
+      <li id="fn6"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref6">↩</a></p></li>
+      </ol>
+      </div>
       
                 </div>
         </article>
         <aside>
           <div class="blog-sidebar">
-            <h4>I'm looking for work!</h4>
+            <h4>Hi, I'm looking for work!</h4>
             <em><p>This site is the creation of Jonathan Hodge, a Canadian-based freelance data analyst. He has years of experience drawing insights from corporate ERP systems built on Oracle and SQL Server databases.</p>
             <p>Profitable business insights are found in sources outside of traditional database systems. The R Programming environment, which can be deployed at an Enterprise level, is an ideal tool for extracting them.  The examination of topical, public domain data in these pages illustrate R's capabilities.</p></em>
             <p>If you like what you see, and think I might help improve your business intelligence, let's connect:</p>
@@ -112,24 +126,17 @@
             <h4>Archives</h4>
             <ol class="list-unstyled">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">November 2015<span class="caret"></span></a>
-                <ol class="dropdown-menu">
-                  <li><a href="151008-article.html">Check. One, two.</a></li>
-                  <li><a href="#">Pending Article</a></li>
-                  <li><a href="#">Pending Article</a></li>
-                </ol>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">October 2015<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Previous<span class="caret"></span></a>
                 <ol class="dropdown-menu">
                   <li><a href="#">Nothing to see here, folks.</a></li>
                   <li><a href="#">Move along...</a></li>
+                  <li role="separator" class="divider"></li>
                 </ol>
               </li>
             </ol>
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">
-              <li><a href="https://www.coursera.org/specializations/jhudatascience">JHU-Coursera Data Science</a></li>
+              <li><a href="https://www.coursera.org/account/accomplishments/specialization/STT5VHUUF7BL">JHU-Coursera Data Science</a></li>
               <li><a href="https://leanpub.com/book_search?search=Data+Science">Leanpub Data Science</a></li>
               <li><a href="https://www.reddit.com/r/dataisbeautiful/">Reddit - Data <em>is</em> beautiful</a></li>
             </ol>
