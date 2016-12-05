@@ -275,7 +275,6 @@ p.date {
     float: right;
     font-size: 1em;
     margin-top: -2.2em;
-    margin-right: 1em;
 }
 pre.r-pre {
   display: block;
@@ -309,7 +308,7 @@ code.r-code {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.blog-main > p > img {
+img.r-plot {
   width: 100%;
   height: auto;
 }
@@ -374,39 +373,6 @@ code, kbd, pre, samp {
 @media (max-width: 320px) {
   .blog-description {
     font-size: 1em;
-  }
-  p.subtitle {
-    padding-top: 0.3em;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-  }
-  h1.title {
-    font-size: 1.2em;
-  }
-  p.date {
-    font-size: 0.8em;
-  }
-}
-@media (min-width: 320px) and (max-width: 478px) {
-  p.date {
-    margin-top: unset;
-    margin-right: unset;
-    float: none;
-  }
-  p.subtitle {
-    margin-bottom: 5px;
-  }
-}
-@media (min-width: 1024px) {
-  p.date {
-    margin-right: 7em;
-  }
-  .blog-main > p {
-    font-size: 1.1em;
-  }
-  p.subtitle {
-    padding-top: 0.3em;
-    font-size: 1.2em;
   }
 }
 /* /Media */

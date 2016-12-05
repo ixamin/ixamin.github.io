@@ -3,10 +3,7 @@
 
 # TEAM
 
-    Author & Developer:Jonathan Hodge
-    Contact: jonathan [at] ixamin.com
-    Twitter: @ixamin
-    From:Brockville, Ontario, Canada
+    <name> -- <role> -- <twitter>
 
 # THANKS
 
@@ -16,4 +13,3 @@
 
     CSS3, HTML5
     Apache Server Configs, jQuery, Modernizr, Normalize.css
-    RStudio
