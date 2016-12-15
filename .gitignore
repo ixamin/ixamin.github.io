@@ -31,3 +31,9 @@ _defaults/*
 _empty/*
 logs/*
 _site/*
+
+code/TakeMeHome/www/.google-analytics.js
+
+code/TakeMeHome/.keys.R
+
+code/TakeMeHome/rsconnect/shinyapps.io/ixamin/TakeMeHome.dcf

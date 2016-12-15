@@ -222,6 +222,9 @@ body {
   color: #777777;
   margin: 0 0 0 0;
 }
+.blog-sidebar {
+  border-top: 0.1em solid #555555
+}
 
 /* /iXamin logo components */
 /* Footer */
@@ -354,6 +357,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 code, kbd, pre, samp {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+/* imbedded Shiny output */
+.shiny-app-frame {
+    position: relative;
+    padding-bottom: 66.67%;
+    padding-top: 4em;
+    height: 0;
+    overflow: hidden;
+}
+.shiny-app-frame iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    top: 0;
+    left: 0;
+}
+/* /imbedded Shiny output */
 /* /R Output */
 /* Media */
 @media (min-width: 768px) {
@@ -363,6 +383,7 @@ code, kbd, pre, samp {
     margin-right: unset;
     margin-left: unset;
     padding-left: 15px;
+    border-top: 0
   }
 }
 @media (min-width: 768px) {

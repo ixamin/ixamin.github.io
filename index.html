@@ -8,7 +8,7 @@
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="msapplication-TileImage" content="/mstile-144x144.png">
         <meta name="author" content="Jonathan Hodge">
-        <meta name="dcterms.date" content="2016-12-04">
+        <meta name="dcterms.date" content="2016-12-15">
         <meta name="keywords" content="exploring data, cleaning data, visualizing data, business intelligence">
         <title>iXamin – Home</title>
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -48,8 +48,9 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Nothing to see here, folks.</a></li>
-                  <li><a href="#">Move along...</a></li>
+                  <li><a href="Ontario_Electricity_Rates.html">Ontario's Electricity Rates</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="TakeMeHome.html">Demonstration Webapp - Take Me Home!</a></li>
                   <li role="separator" class="divider"></li>
                 </ul>
               </li>
@@ -82,39 +83,23 @@
           <!-- /Blog Title -->
             
             <header>
-        <h1 class="title">Ontario’s Electricity Rates</h1>
+        <h1 class="title">Take Me Home!</h1>
       </header>
             
-            <p class="subtitle">Mixed with Water, an economic shock.</p>
+            <p class="subtitle">A demo App built with R.</p>
             
             
-            <p class="date">2016-12-04</p>
+            <p class="date">2016-12-15</p>
             
-      <p><strong>Built with R version: 3.3.2.</strong><br />
-      <a href="https://github.com/ixamin/ixamin.github.io">See the code at https://github.com/ixamin/ixamin.github.io</a></p>
-      <p>Ontario’s Time-of-Use rates have been steadily increasing, with the “On Peak” rate rising the most rapidly in the last three years.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a><br />
-      <img src="index_files/figure-html/Ontario_Electricity_Rates-1.png" width="672" /></p>
-      <p>In the same period, Ontario’s Electricity CPI has risen more rapidly than the Canadian average.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a><br />
-      <img src="index_files/figure-html/CA_ON_Elect_CPI-1.png" width="672" /></p>
-      <p>In 2015, Ontario had the highest provincial Electricity CPI variation from the country’s average. The Northwest Territories is the only region having a greater variation.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a><br />
-      <img src="index_files/figure-html/Provincial_Elec_CPI_Var-1.png" width="672" /></p>
-      <p>Nuclear power is the largest source of electricity in Ontario.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a><br />
-      <img src="index_files/figure-html/ON_Generating_Types-1.png" width="672" /></p>
-      <p>Nuclear fuel is about a third of the total provincial cost; hydrocarbon driven thermal electric generation costs the most.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a><br />
-      <img src="index_files/figure-html/ON_Generating_Fuel_Costs-1.png" width="672" /></p>
-      <p>Unless a household heats with electricity, the alternate typical heating sources are reflecting a lower recent Consumer Price Index. However, the CPI of water is higher and increasing faster than electricity.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a><br />
-      <img src="index_files/figure-html/ON_Utilities_CPI-1.png" width="672" /></p>
-      <div class="footnotes">
-      <hr />
-      <ol>
-      <li id="fn1"><p>Source: <a href="http://www.ontario-hydro.com/current-rates">ontario-hydro.com</a><a href="#fnref1">↩</a></p></li>
-      <li id="fn2"><p>Source: <a href="http://www.ontarioenergyboard.ca/oeb/Consumers/Electricity/Electricity%20Prices/Historical%20Electricity%20Prices">ontarioenergyboard.ca</a><a href="#fnref2">↩</a></p></li>
-      <li id="fn3"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref3">↩</a></p></li>
-      <li id="fn4"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref4">↩</a></p></li>
-      <li id="fn5"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref5">↩</a></p></li>
-      <li id="fn6"><p>Source: <a href="http://www5.statcan.gc.ca/cansim">statcan.gc.ca</a><a href="#fnref6">↩</a></p></li>
-      </ol>
-      </div>
+      <p><strong>Built with R version: 3.3.2.</strong> with data from Application Programming Interfaces (API’s) provided by <a href="https://developers.google.com/qpx-express/">Google’s QPX Express</a> and <a href="https://www.developer.aero">SITA Airport FIDS</a>.<br />
+      See the code at <a href="https://github.com/ixamin/ixamin.github.io/code/TakeMeHome">https://github.com/ixamin/ixamin.github.io</a></p>
+      <p>The TakeMeHome web application runs on the <a href="https://shiny.rstudio.com/">Shiny</a> framework for R. This framework permits interactive analysis of data, and run on a internally hosted Shiny Server, or in the cloud through the ShinyApps.io service. The application imbedded below is sourced from <a href="https://ixamin.shinyapps.io/TakeMeHome/" class="uri">https://ixamin.shinyapps.io/TakeMeHome/</a>.</p>
+      <div class="shiny-app-frame">
+<iframe src=
+https://ixamin.shinyapps.io/TakeMeHome/
+width="400" height="600" scrolling="yes"></iframe>
+<div class="caption"></div>
+</div>
       
                 </div>
         </article>
@@ -128,10 +113,11 @@
             <h4>Archives</h4>
             <ol class="list-unstyled">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Previous<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles<span class="caret"></span></a>
                 <ol class="dropdown-menu">
-                  <li><a href="#">Nothing to see here, folks.</a></li>
-                  <li><a href="#">Move along...</a></li>
+                  <li><a href="Ontario_Electricity_Rates.html">Ontario's Electricity Rates</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="TakeMeHome.html">Demonstration Webapp - Take Me Home!</a></li>
                   <li role="separator" class="divider"></li>
                 </ol>
               </li>
@@ -201,7 +187,7 @@
           e=o.createElement(i);r=o.getElementsByTagName(i)[0];
           e.src='https://www.google-analytics.com/analytics.js';
           r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-          ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+          ga('create','UA-2328610-3','auto');ga('send','pageview');
       </script>
     </body>
 </html>

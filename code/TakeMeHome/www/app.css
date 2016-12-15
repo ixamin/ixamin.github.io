@@ -1,0 +1,73 @@
+h2 {
+  background-color: #0C2C7D;
+  border-color: #09215f;
+  color: #FFF;
+  padding-left: 1.8em;
+  background-image: url("holly.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: left;
+}
+#inputs {
+  background-image: url("1423px-map_of_the_world.png");
+  background-repeat:repeat-x;
+  background-clip: border-box;
+  background-position: center;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+#here_box {
+  background-color: transparent;
+}
+#home_box {
+  background-color: transparent;
+}
+#date_box {
+  background-color: transparent;
+}
+.well {
+  margin-bottom: unset;
+  color: #0C2C7D;
+}
+.btn-default {
+  background-color: rgba(32, 230, 5, 0.25);
+}
+.btn-default:focus,
+.btn-default.focus {
+  background-color: rgba(32, 230, 5, 0.75);
+  border-color: red;
+}
+.option.active {
+  background-color: rgba(32, 230, 5, 0.25);
+}
+/*
+@media only screen and (max-width: 320px){
+  .container-fluid {
+    background-image: url("320px-map_of_the_world.png");
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 640px){
+    .container-fluid {
+    background-image: url("640px-map_of_the_world.png");
+  }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 800px){
+    .container-fluid {
+    background-image: url("800px-map_of_the_world.png");
+  }
+}
+
+@media only screen and (min-width: 881px) and (max-width: 1024px){
+    .container-fluid {
+    background-image: url("1024px-map_of_the_world.png");
+  }
+}
+
+@media only screen and (min-width: 1025px){
+    .container-fluid {
+    background-image: url("1423px-map_of_the_world.png");
+  }
+}
+*/
