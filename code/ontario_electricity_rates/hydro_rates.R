@@ -190,7 +190,7 @@ ON_Generating_Types <- ggplot(data = Generating_Class_data) +
                                "#c01200",
                                "#762100",
                                "#00858c")) +
-  labs(title = "Electric Generation Capacity by Type \n(Ontario in 2014)", y = "% of Annual Capacity")
+  labs(title = "Electricity Generation - Capacity by Type \n(Ontario in 2014)", y = "% of Annual Capacity")
 
 ON_Generating_Fuel_Costs <- ggplot(data = Fuel_Cost_data) +
   aes(x=reorder(Fuel,-AnnualPCT),AnnualPCT, fill = Fuel) +
