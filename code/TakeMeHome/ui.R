@@ -11,7 +11,8 @@ shinyUI(fluidPage(
   tags$head(tags$link(rel="stylesheet", type="text/css", href="app.css")),
   tags$head(tags$script(type="text/javascript",src = ".google-analytics.js")),
   tags$div(HTML(' <input type="text" id="tzone" name="tzone" style="display: none;"> ')),
-  titlePanel(title="Take Me Home for the Holidays!",windowTitle="Take Me Home!"),
+  # titlePanel(title="Take Me Home for the Holidays!",windowTitle="Take Me Home!"),  #for Christmas season.  Change app.css too
+  titlePanel(title="Take Me Home!",windowTitle="Take Me Home!"),
   fluidRow(
     column(12, "",
            fluidRow(id = "inputs",

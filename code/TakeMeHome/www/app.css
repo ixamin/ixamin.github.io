@@ -3,10 +3,10 @@ h2 {
   border-color: #09215f;
   color: #FFF;
   padding-left: 1.8em;
-  background-image: url("holly.png");
+/*  background-image: url("holly.png");  /* for Christmas season
   background-repeat:no-repeat;
   background-size: contain;
-  background-position: left;
+  background-position: left; */
 }
 #inputs {
   background-image: url("1423px-map_of_the_world.png");
