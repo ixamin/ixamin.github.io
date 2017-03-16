@@ -4,16 +4,51 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="generator" content="pandoc">
-        <meta name="description" content="iXamin examines exploring, cleaning, and visualizing topical, public domain data using R programming.  The author, Jonathan Hodge, is available for contract assignments.">
+        <meta name="description" content="iXamin examines extracting, transforming, and visualizing topical, public domain data using R programming.  The author, Jonathan Hodge, is available for contract assignments.">
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="msapplication-TileImage" content="/mstile-144x144.png">
         <meta name="author" content="Jonathan Hodge">
-        <meta name="dcterms.date" content="2017-01-19">
-        <meta name="keywords" content="exploring data, cleaning data, visualizing data, business intelligence">
-        <title>iXamin – Home - Hire a freelance R programming Data Analyst and corporate ERP Business Intelligence Expert with Canadian Security Clearance</title>
+        <meta name="dcterms.date" content="2017-03-16">
+        <meta name="keywords" content="extracting data,transforming data,visualizing data,business intelligence">
+        <title>iXamin – Home - Hire a freelance Business Intelligence consultant and ERP expert</title>
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" href="favicon.ico">
+                <style type="text/css">div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */</style>
                                 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -26,7 +61,7 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-            
+      
             <!--[if lt IE 8]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
@@ -48,9 +83,11 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="Ontario_Electricity_Rates.html">Ontario's Electricity Rates</a></li>
+                  <li><a href="OntarioElectricityRates.html">Ontario's Electricity Rates</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="TakeMeHome.html">Demonstration Webapp - Take Me Home!</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="LottoNumbers.html">Lotto Numbers - A winning strategy</a></li>
                   <li role="separator" class="divider"></li>
                 </ul>
               </li>
@@ -58,66 +95,292 @@
           </div>
         </nav>
         <!-- /Fixed navbar -->
-            <article>
-        <div class="blog-main">
-          <div class="blog-header">
-            <!-- Logo -->
-            <svg id="ixamin-svg-header" class="ixamin-svg-class" xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" viewBox="0 0 634.68116 634.68116">
-              <g id="ixamin-logo-header">
-                <path style="fill-opacity:1;fill-rule:evenodd" d="m 385.74132,102.45823 0,60.84766 c 14.64305,-32.5941 27.04341,-60.84766 42.35547,-60.84766 l -42.35547,0 z m 42.35547,0 c 32.98969,0 52.78387,158.34961 128.66016,158.34961 l 0,1.65039 38.98437,0 0,-160 -167.64453,0 z m -42.35547,60.84766 c -20.06009,44.65196 -44.34953,97.50195 -86.30273,97.50195 l 0,1.65039 86.30273,0 0,-99.15234 z" id="normal-plot"/>
-                <g transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,-268.03224,337.02796)" id="magnifying-glass" >
-                  <path  d="M 615,215 A 185,185 0 0 0 430,400 185,185 0 0 0 615,585 185,185 0 0 0 800,400 185,185 0 0 0 615,215 Z m 0,15 A 170,170 0 0 1 785,400 170,170 0 0 1 615,570 170,170 0 0 1 445,400 170,170 0 0 1 615,230 Z" style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" id="lense-holder" />
-                  <path d="m 421.45695,400 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.5,-37 9.5,37 0 0 1 9.5,-37 9.5,37 0 0 1 9.5,37 z m 16.29961,0 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.5,-37 9.5,37 0 0 1 9.5,-37 9.5,37 0 0 1 9.5,37 z" style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" id="handle-top" />
-                  <path style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" d="m 37.100076,369 380.000004,0 0,62 -380.000004,0 z" id="handle-body" />
-      						<path d="m 43.054573,400 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.5,-37 9.5,37 0 0 1 9.5,-37 9.5,37 0 0 1 9.5,37 z m -16.29961,0 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.4999999,-37 9.5,37 0 0 1 9.4999999,-37 9.5,37 0 0 1 9.5,37 z" style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" id="handle-bottom" />
-                  <path style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'Nanum Pen Script';-inkscape-font-specification:'Nanum Pen Script, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 284.45546,389.65886 q 0.27,1.35 0.54,3.06 0.36,1.62 0.72,3.42 0.36,1.71 0.63,3.51 0.27,1.8 0.45,3.42 1.08,-2.34 2.34,-4.95 1.26,-2.61 2.7,-4.77 1.53,-2.25 3.15,-3.69 1.71,-1.44 3.69,-1.44 2.97,0 4.95,2.16 2.07,2.16 3.42,5.4 1.44,3.15 2.25,6.66 0.81,3.51 1.35,6.21 0.54,2.43 -2.16,3.6 -1.26,0.63 -1.89,0.18 -0.63,-0.45 -0.72,-0.9 -0.45,-1.08 -1.17,-3.78 -0.63,-2.7 -1.53,-5.49 -0.81,-2.79 -1.89,-4.86 -1.08,-2.07 -2.43,-1.89 -1.62,0.09 -2.88,2.43 -1.08,1.89 -2.25,4.23 -1.08,2.25 -2.16,4.68 -1.08,2.34 -2.16,4.77 -0.99,2.34 -1.89,4.32 -0.63,0.63 -1.62,0.9 -0.9,0.18 -1.89,-0.18 -0.9,-0.27 -1.44,-0.9 -0.54,-0.63 -0.54,-1.26 -0.81,-7.02 -1.71,-12.78 -0.81,-5.76 -2.16,-11.79 -0.63,-2.07 -0.27,-3.24 0.45,-1.26 2.7,-0.99 3.15,0.54 3.87,3.96 z m -12.43688,-7.02 q -0.18,0.9 -1.26,0.99 -1.08,0.09 -1.8,0.09 -2.25,0.09 -4.68,0.45 -2.34,0.36 -4.95,1.08 -1.08,0.36 -2.34,-0.27 -1.26,-0.63 -1.53,-2.52 0,-0.72 0.54,-1.17 0.54,-0.45 1.26,-0.81 1.17,-0.54 2.79,-0.9 1.62,-0.45 3.24,-0.63 1.71,-0.18 3.24,-0.09 1.53,0 2.52,0.27 1.44,0.45 2.25,1.35 0.9,0.9 0.72,2.16 z m -2.07,29.97 q 0.63,1.44 0.63,3.15 0.09,1.62 -0.9,2.25 -1.26,0.81 -2.7,-0.09 -1.44,-0.9 -2.16,-2.43 -0.99,-1.89 -1.53,-4.59 -0.54,-2.79 -0.81,-5.49 -0.27,-2.7 -0.36,-5.04 0,-2.34 0,-3.51 0.09,-1.26 0.72,-2.34 0.63,-1.08 1.62,-1.26 1.62,0.09 2.61,1.53 0.99,1.35 0.9,3.42 0,1.62 0.09,3.6 0.09,1.98 0.36,3.96 0.27,1.98 0.63,3.87 0.36,1.8 0.9,2.97 z m -63.54844,-22.32 q 0.09,1.44 0.27,3.6 0.27,2.07 0.54,4.41 0.27,2.25 0.54,4.5 0.36,2.25 0.63,4.14 0.99,-1.98 2.43,-4.86 1.44,-2.88 2.97,-5.49 1.62,-2.7 3.24,-4.5 1.71,-1.89 3.06,-1.89 1.44,0 2.61,1.44 1.26,1.35 2.16,3.33 0.9,1.98 1.53,4.23 0.72,2.25 1.17,3.96 0.36,-1.17 0.9,-2.61 0.63,-1.53 1.26,-3.06 0.72,-1.62 1.53,-3.15 0.9,-1.53 1.89,-2.7 1.17,-1.26 2.52,-1.8 1.35,-0.63 1.98,-0.63 0.81,0 1.89,0.54 1.17,0.45 2.34,1.26 1.17,0.81 2.16,1.98 1.08,1.08 1.71,2.25 1.26,2.43 1.98,5.31 0.81,2.88 1.17,5.49 0.36,2.61 0.45,4.68 0.18,1.98 0.27,2.79 0,1.17 -0.27,1.8 -0.27,0.54 -0.99,0.9 -0.99,0.45 -1.71,0.36 -0.72,-0.18 -1.17,-0.63 -0.45,-0.45 -0.72,-0.99 -0.27,-0.63 -0.36,-1.08 -0.27,-2.07 -0.63,-4.23 -0.27,-2.16 -0.63,-4.14 -0.36,-2.07 -0.9,-3.78 -0.45,-1.8 -0.99,-3.15 -0.18,-0.36 -0.63,-0.9 -0.36,-0.63 -0.9,-1.17 -0.45,-0.54 -0.9,-0.9 -0.45,-0.36 -0.63,-0.45 -0.9,0 -1.89,1.71 -0.99,1.62 -1.89,3.96 -0.9,2.34 -1.71,4.95 -0.72,2.52 -1.08,4.32 0,2.34 -0.9,3.51 -0.9,1.08 -1.89,1.08 -0.99,0 -2.16,-0.72 -1.08,-0.81 -1.44,-1.8 -0.54,-1.44 -1.17,-3.24 -0.63,-1.8 -1.35,-3.69 -0.63,-1.89 -1.35,-3.69 -0.63,-1.8 -1.26,-3.24 -1.26,1.71 -2.52,3.78 -1.17,2.07 -2.34,4.23 -1.08,2.16 -2.16,4.32 -0.99,2.07 -1.89,3.69 -0.63,0.99 -1.35,1.8 -0.72,0.72 -1.71,0.72 -0.72,0 -1.53,-0.63 -0.81,-0.72 -1.53,-1.71 -0.72,-0.99 -1.35,-2.25 -0.54,-1.26 -0.81,-2.52 -0.72,-3.87 -1.26,-8.46 -0.45,-4.68 -0.9,-9.09 -0.09,-1.53 0.36,-2.79 0.54,-1.35 1.98,-1.8 1.53,-0.27 2.34,0.45 0.81,0.72 0.99,2.25 z m -15.24375,-4.23 q 0.36,2.52 0.54,5.4 0.27,2.79 0.36,5.67 0.18,2.88 0.18,5.58 0,2.7 -0.09,4.86 2.88,1.98 3.42,3.51 0.63,1.53 0.18,2.7 -0.54,1.62 -1.98,1.71 -1.35,0 -3.15,-0.99 -1.26,0.9 -2.88,1.98 -1.62,0.99 -3.42,1.98 -1.8,0.9 -3.6,1.62 -1.8,0.72 -3.33,0.99 -2.88,0.45 -5.22,-1.08 -2.25,-1.53 -3.06,-4.59 -0.54,-2.07 -0.27,-4.23 0.27,-2.25 1.35,-4.23 1.08,-2.07 2.88,-3.69 1.89,-1.62 4.41,-2.52 0.63,-0.27 1.71,-0.45 1.17,-0.18 2.34,-0.09 1.26,0 2.52,0.45 1.26,0.45 2.34,1.53 0,-1.53 -0.09,-3.33 0,-1.89 -0.09,-3.78 -0.09,-1.89 -0.27,-3.51 -0.09,-1.71 -0.27,-2.88 -0.18,-1.35 -1.08,-1.62 -0.81,-0.36 -2.07,0.09 -2.16,0.72 -5.04,2.79 -2.88,2.07 -5.49,4.41 -0.81,0.81 -1.89,0.72 -0.99,-0.09 -1.71,-0.81 -0.72,-0.72 -0.81,-1.62 -0.09,-0.99 0.72,-2.07 1.53,-1.62 3.42,-3.33 1.89,-1.71 3.96,-3.06 2.07,-1.44 4.23,-2.34 2.16,-0.9 4.32,-0.99 3.15,-0.09 4.86,1.44 1.71,1.44 2.07,3.78 z m -10.44,19.35 q -1.17,0.27 -2.52,1.17 -1.26,0.81 -2.34,2.07 -0.99,1.17 -1.53,2.7 -0.45,1.44 0,2.88 0.18,0.54 0.72,0.81 0.63,0.27 1.35,0.09 2.16,-0.45 4.86,-1.71 2.79,-1.35 4.41,-2.88 0,-0.54 -0.54,-1.35 -0.54,-0.9 -1.26,-1.71 -0.72,-0.9 -1.62,-1.53 -0.81,-0.63 -1.53,-0.54 z m -20.06859,-20.61 q -3.06,2.07 -6.93,5.4 -3.78,3.24 -7.65,7.02 2.7,4.59 4.86,8.64 2.25,3.96 3.51,6.21 0.45,0.9 0.09,2.34 -0.36,1.44 -1.44,1.71 -0.99,0.27 -2.16,-0.27 -1.08,-0.54 -1.53,-1.53 -1.8,-3.24 -3.6,-6.48 -1.8,-3.33 -3.87,-6.57 -3.6,3.6 -6.48,6.75 -2.88,3.15 -4.41,5.22 -1.26,1.62 -2.43,1.62 -1.08,-0.09 -1.8,-0.63 -0.63,-0.45 -0.81,-1.08 -0.09,-0.72 0.09,-1.35 0.18,-0.72 0.45,-1.35 0.36,-0.72 0.72,-1.26 1.8,-2.43 4.77,-5.76 2.97,-3.33 6.75,-7.11 -4.59,-7.2 -9.99,-13.95 -0.54,-0.99 -0.45,-1.62 0.18,-0.63 0.45,-0.9 1.26,-0.99 2.43,-0.72 1.26,0.27 2.43,0.99 2.25,2.16 4.59,5.4 2.43,3.15 4.77,6.75 3.78,-3.42 7.74,-6.66 4.05,-3.33 8.1,-5.94 0.9,-0.54 2.07,-0.09 1.26,0.45 1.62,1.44 0.36,1.08 -0.36,2.16 -0.63,0.99 -1.53,1.62 z m -39.97688,-2.16 q -0.18,0.9 -1.26,0.99 -1.08,0.09 -1.8,0.09 -2.25,0.09 -4.68,0.45 -2.34,0.36 -4.95,1.08 -1.08,0.36 -2.34,-0.27 -1.26,-0.63 -1.53,-2.52 0,-0.72 0.54,-1.17 0.54,-0.45 1.26,-0.81 1.17,-0.54 2.79,-0.9 1.62,-0.45 3.24,-0.63 1.71,-0.18 3.24,-0.09 1.53,0 2.52,0.27 1.44,0.45 2.25,1.35 0.9,0.9 0.72,2.16 z m -2.07,29.97 q 0.63,1.44 0.63,3.15 0.09,1.62 -0.9,2.25 -1.26,0.81 -2.7,-0.09 -1.44,-0.9 -2.16,-2.43 -0.99,-1.89 -1.53,-4.59 -0.54,-2.79 -0.81,-5.49 -0.27,-2.7 -0.36,-5.04 0,-2.34 0,-3.51 0.09,-1.26 0.72,-2.34 0.63,-1.08 1.62,-1.26 1.62,0.09 2.61,1.53 0.99,1.35 0.9,3.42 0,1.62 0.09,3.6 0.09,1.98 0.36,3.96 0.27,1.98 0.63,3.87 0.36,1.8 0.9,2.97 z" id="ixamin-text"/>
+              <article>
+          <div class="blog-main">
+            <div class="blog-header">
+              <!-- Logo -->
+              <svg id="ixamin-svg-header" class="ixamin-svg-class" xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" viewBox="0 0 634.68116 634.68116">
+                <g id="ixamin-logo-header">
+                  <path style="fill-opacity:1;fill-rule:evenodd" d="m 385.74132,102.45823 0,60.84766 c 14.64305,-32.5941 27.04341,-60.84766 42.35547,-60.84766 l -42.35547,0 z m 42.35547,0 c 32.98969,0 52.78387,158.34961 128.66016,158.34961 l 0,1.65039 38.98437,0 0,-160 -167.64453,0 z m -42.35547,60.84766 c -20.06009,44.65196 -44.34953,97.50195 -86.30273,97.50195 l 0,1.65039 86.30273,0 0,-99.15234 z" id="normal-plot"/>
+                  <g transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,-268.03224,337.02796)" id="magnifying-glass" >
+                    <path  d="M 615,215 A 185,185 0 0 0 430,400 185,185 0 0 0 615,585 185,185 0 0 0 800,400 185,185 0 0 0 615,215 Z m 0,15 A 170,170 0 0 1 785,400 170,170 0 0 1 615,570 170,170 0 0 1 445,400 170,170 0 0 1 615,230 Z" style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" id="lense-holder" />
+                    <path d="m 421.45695,400 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.5,-37 9.5,37 0 0 1 9.5,-37 9.5,37 0 0 1 9.5,37 z m 16.29961,0 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.5,-37 9.5,37 0 0 1 9.5,-37 9.5,37 0 0 1 9.5,37 z" style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" id="handle-top" />
+                    <path style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" d="m 37.100076,369 380.000004,0 0,62 -380.000004,0 z" id="handle-body" />
+        						<path d="m 43.054573,400 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.5,-37 9.5,37 0 0 1 9.5,-37 9.5,37 0 0 1 9.5,37 z m -16.29961,0 a 9.5,37 0 0 1 -9.5,37 9.5,37 0 0 1 -9.4999999,-37 9.5,37 0 0 1 9.4999999,-37 9.5,37 0 0 1 9.5,37 z" style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1" id="handle-bottom" />
+                    <path style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:90px;line-height:125%;font-family:'Nanum Pen Script';-inkscape-font-specification:'Nanum Pen Script, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m 284.45546,389.65886 q 0.27,1.35 0.54,3.06 0.36,1.62 0.72,3.42 0.36,1.71 0.63,3.51 0.27,1.8 0.45,3.42 1.08,-2.34 2.34,-4.95 1.26,-2.61 2.7,-4.77 1.53,-2.25 3.15,-3.69 1.71,-1.44 3.69,-1.44 2.97,0 4.95,2.16 2.07,2.16 3.42,5.4 1.44,3.15 2.25,6.66 0.81,3.51 1.35,6.21 0.54,2.43 -2.16,3.6 -1.26,0.63 -1.89,0.18 -0.63,-0.45 -0.72,-0.9 -0.45,-1.08 -1.17,-3.78 -0.63,-2.7 -1.53,-5.49 -0.81,-2.79 -1.89,-4.86 -1.08,-2.07 -2.43,-1.89 -1.62,0.09 -2.88,2.43 -1.08,1.89 -2.25,4.23 -1.08,2.25 -2.16,4.68 -1.08,2.34 -2.16,4.77 -0.99,2.34 -1.89,4.32 -0.63,0.63 -1.62,0.9 -0.9,0.18 -1.89,-0.18 -0.9,-0.27 -1.44,-0.9 -0.54,-0.63 -0.54,-1.26 -0.81,-7.02 -1.71,-12.78 -0.81,-5.76 -2.16,-11.79 -0.63,-2.07 -0.27,-3.24 0.45,-1.26 2.7,-0.99 3.15,0.54 3.87,3.96 z m -12.43688,-7.02 q -0.18,0.9 -1.26,0.99 -1.08,0.09 -1.8,0.09 -2.25,0.09 -4.68,0.45 -2.34,0.36 -4.95,1.08 -1.08,0.36 -2.34,-0.27 -1.26,-0.63 -1.53,-2.52 0,-0.72 0.54,-1.17 0.54,-0.45 1.26,-0.81 1.17,-0.54 2.79,-0.9 1.62,-0.45 3.24,-0.63 1.71,-0.18 3.24,-0.09 1.53,0 2.52,0.27 1.44,0.45 2.25,1.35 0.9,0.9 0.72,2.16 z m -2.07,29.97 q 0.63,1.44 0.63,3.15 0.09,1.62 -0.9,2.25 -1.26,0.81 -2.7,-0.09 -1.44,-0.9 -2.16,-2.43 -0.99,-1.89 -1.53,-4.59 -0.54,-2.79 -0.81,-5.49 -0.27,-2.7 -0.36,-5.04 0,-2.34 0,-3.51 0.09,-1.26 0.72,-2.34 0.63,-1.08 1.62,-1.26 1.62,0.09 2.61,1.53 0.99,1.35 0.9,3.42 0,1.62 0.09,3.6 0.09,1.98 0.36,3.96 0.27,1.98 0.63,3.87 0.36,1.8 0.9,2.97 z m -63.54844,-22.32 q 0.09,1.44 0.27,3.6 0.27,2.07 0.54,4.41 0.27,2.25 0.54,4.5 0.36,2.25 0.63,4.14 0.99,-1.98 2.43,-4.86 1.44,-2.88 2.97,-5.49 1.62,-2.7 3.24,-4.5 1.71,-1.89 3.06,-1.89 1.44,0 2.61,1.44 1.26,1.35 2.16,3.33 0.9,1.98 1.53,4.23 0.72,2.25 1.17,3.96 0.36,-1.17 0.9,-2.61 0.63,-1.53 1.26,-3.06 0.72,-1.62 1.53,-3.15 0.9,-1.53 1.89,-2.7 1.17,-1.26 2.52,-1.8 1.35,-0.63 1.98,-0.63 0.81,0 1.89,0.54 1.17,0.45 2.34,1.26 1.17,0.81 2.16,1.98 1.08,1.08 1.71,2.25 1.26,2.43 1.98,5.31 0.81,2.88 1.17,5.49 0.36,2.61 0.45,4.68 0.18,1.98 0.27,2.79 0,1.17 -0.27,1.8 -0.27,0.54 -0.99,0.9 -0.99,0.45 -1.71,0.36 -0.72,-0.18 -1.17,-0.63 -0.45,-0.45 -0.72,-0.99 -0.27,-0.63 -0.36,-1.08 -0.27,-2.07 -0.63,-4.23 -0.27,-2.16 -0.63,-4.14 -0.36,-2.07 -0.9,-3.78 -0.45,-1.8 -0.99,-3.15 -0.18,-0.36 -0.63,-0.9 -0.36,-0.63 -0.9,-1.17 -0.45,-0.54 -0.9,-0.9 -0.45,-0.36 -0.63,-0.45 -0.9,0 -1.89,1.71 -0.99,1.62 -1.89,3.96 -0.9,2.34 -1.71,4.95 -0.72,2.52 -1.08,4.32 0,2.34 -0.9,3.51 -0.9,1.08 -1.89,1.08 -0.99,0 -2.16,-0.72 -1.08,-0.81 -1.44,-1.8 -0.54,-1.44 -1.17,-3.24 -0.63,-1.8 -1.35,-3.69 -0.63,-1.89 -1.35,-3.69 -0.63,-1.8 -1.26,-3.24 -1.26,1.71 -2.52,3.78 -1.17,2.07 -2.34,4.23 -1.08,2.16 -2.16,4.32 -0.99,2.07 -1.89,3.69 -0.63,0.99 -1.35,1.8 -0.72,0.72 -1.71,0.72 -0.72,0 -1.53,-0.63 -0.81,-0.72 -1.53,-1.71 -0.72,-0.99 -1.35,-2.25 -0.54,-1.26 -0.81,-2.52 -0.72,-3.87 -1.26,-8.46 -0.45,-4.68 -0.9,-9.09 -0.09,-1.53 0.36,-2.79 0.54,-1.35 1.98,-1.8 1.53,-0.27 2.34,0.45 0.81,0.72 0.99,2.25 z m -15.24375,-4.23 q 0.36,2.52 0.54,5.4 0.27,2.79 0.36,5.67 0.18,2.88 0.18,5.58 0,2.7 -0.09,4.86 2.88,1.98 3.42,3.51 0.63,1.53 0.18,2.7 -0.54,1.62 -1.98,1.71 -1.35,0 -3.15,-0.99 -1.26,0.9 -2.88,1.98 -1.62,0.99 -3.42,1.98 -1.8,0.9 -3.6,1.62 -1.8,0.72 -3.33,0.99 -2.88,0.45 -5.22,-1.08 -2.25,-1.53 -3.06,-4.59 -0.54,-2.07 -0.27,-4.23 0.27,-2.25 1.35,-4.23 1.08,-2.07 2.88,-3.69 1.89,-1.62 4.41,-2.52 0.63,-0.27 1.71,-0.45 1.17,-0.18 2.34,-0.09 1.26,0 2.52,0.45 1.26,0.45 2.34,1.53 0,-1.53 -0.09,-3.33 0,-1.89 -0.09,-3.78 -0.09,-1.89 -0.27,-3.51 -0.09,-1.71 -0.27,-2.88 -0.18,-1.35 -1.08,-1.62 -0.81,-0.36 -2.07,0.09 -2.16,0.72 -5.04,2.79 -2.88,2.07 -5.49,4.41 -0.81,0.81 -1.89,0.72 -0.99,-0.09 -1.71,-0.81 -0.72,-0.72 -0.81,-1.62 -0.09,-0.99 0.72,-2.07 1.53,-1.62 3.42,-3.33 1.89,-1.71 3.96,-3.06 2.07,-1.44 4.23,-2.34 2.16,-0.9 4.32,-0.99 3.15,-0.09 4.86,1.44 1.71,1.44 2.07,3.78 z m -10.44,19.35 q -1.17,0.27 -2.52,1.17 -1.26,0.81 -2.34,2.07 -0.99,1.17 -1.53,2.7 -0.45,1.44 0,2.88 0.18,0.54 0.72,0.81 0.63,0.27 1.35,0.09 2.16,-0.45 4.86,-1.71 2.79,-1.35 4.41,-2.88 0,-0.54 -0.54,-1.35 -0.54,-0.9 -1.26,-1.71 -0.72,-0.9 -1.62,-1.53 -0.81,-0.63 -1.53,-0.54 z m -20.06859,-20.61 q -3.06,2.07 -6.93,5.4 -3.78,3.24 -7.65,7.02 2.7,4.59 4.86,8.64 2.25,3.96 3.51,6.21 0.45,0.9 0.09,2.34 -0.36,1.44 -1.44,1.71 -0.99,0.27 -2.16,-0.27 -1.08,-0.54 -1.53,-1.53 -1.8,-3.24 -3.6,-6.48 -1.8,-3.33 -3.87,-6.57 -3.6,3.6 -6.48,6.75 -2.88,3.15 -4.41,5.22 -1.26,1.62 -2.43,1.62 -1.08,-0.09 -1.8,-0.63 -0.63,-0.45 -0.81,-1.08 -0.09,-0.72 0.09,-1.35 0.18,-0.72 0.45,-1.35 0.36,-0.72 0.72,-1.26 1.8,-2.43 4.77,-5.76 2.97,-3.33 6.75,-7.11 -4.59,-7.2 -9.99,-13.95 -0.54,-0.99 -0.45,-1.62 0.18,-0.63 0.45,-0.9 1.26,-0.99 2.43,-0.72 1.26,0.27 2.43,0.99 2.25,2.16 4.59,5.4 2.43,3.15 4.77,6.75 3.78,-3.42 7.74,-6.66 4.05,-3.33 8.1,-5.94 0.9,-0.54 2.07,-0.09 1.26,0.45 1.62,1.44 0.36,1.08 -0.36,2.16 -0.63,0.99 -1.53,1.62 z m -39.97688,-2.16 q -0.18,0.9 -1.26,0.99 -1.08,0.09 -1.8,0.09 -2.25,0.09 -4.68,0.45 -2.34,0.36 -4.95,1.08 -1.08,0.36 -2.34,-0.27 -1.26,-0.63 -1.53,-2.52 0,-0.72 0.54,-1.17 0.54,-0.45 1.26,-0.81 1.17,-0.54 2.79,-0.9 1.62,-0.45 3.24,-0.63 1.71,-0.18 3.24,-0.09 1.53,0 2.52,0.27 1.44,0.45 2.25,1.35 0.9,0.9 0.72,2.16 z m -2.07,29.97 q 0.63,1.44 0.63,3.15 0.09,1.62 -0.9,2.25 -1.26,0.81 -2.7,-0.09 -1.44,-0.9 -2.16,-2.43 -0.99,-1.89 -1.53,-4.59 -0.54,-2.79 -0.81,-5.49 -0.27,-2.7 -0.36,-5.04 0,-2.34 0,-3.51 0.09,-1.26 0.72,-2.34 0.63,-1.08 1.62,-1.26 1.62,0.09 2.61,1.53 0.99,1.35 0.9,3.42 0,1.62 0.09,3.6 0.09,1.98 0.36,3.96 0.27,1.98 0.63,3.87 0.36,1.8 0.9,2.97 z" id="ixamin-text"/>
+                  </g>
                 </g>
-              </g>
-            </svg>
-              <img class="fallback" src="ixamin.png" alt="ixamin mark">
-            <!-- /Logo -->
-            <!-- Blog Title -->
-            <p class="blog-title">iXamin</p>
-            <p class="blog-description">Data examined.</p>
-          </div>
-          <!-- /Blog Title -->
-            
-            <header>
-        <h1 class="title">Take Me Home!</h1>
-      </header>
-            
-            <p class="subtitle">A demo App built with R.</p>
-            
-            
-            <p class="date">2016-12-15</p>
-            
-      <p><strong>Built with R version: 3.3.2.</strong> with data from Application Programming Interfaces (API’s) provided by <a href="https://developers.google.com/qpx-express/">Google’s QPX Express</a> and <a href="https://www.developer.aero">SITA Airport FIDS</a>.<br />
-      See the code at <a href="https://github.com/ixamin/ixamin.github.io/tree/master/code/TakeMeHome">https://github.com/ixamin/ixamin.github.io</a></p>
-      <p>The TakeMeHome web application runs on the <a href="https://shiny.rstudio.com/">Shiny</a> framework for R. This framework permits interactive analysis of data, and run on a internally hosted Shiny Server, or in the cloud through the ShinyApps.io service. The application imbedded below is sourced from <a href="https://ixamin.shinyapps.io/TakeMeHome/" class="uri">https://ixamin.shinyapps.io/TakeMeHome/</a>.</p>
-      <div class="shiny-app-frame">
-<iframe src=
-https://ixamin.shinyapps.io/TakeMeHome/
-width="400" height="600" scrolling="yes"></iframe>
-<div class="caption"></div>
-</div>
+              </svg>
+                <img class="fallback" src="ixamin.png" alt="ixamin mark">
+              <!-- /Logo -->
+              <!-- Blog Title -->
+              <p class="blog-title">iXamin</p>
+              <p class="blog-description">Data examined.</p>
+            </div>
+            <!-- /Blog Title -->
       
+            <header>
+        <h1 class="title">Lotto Numbers</h1>
+      </header>
+      
+            <p class="subtitle">A winning strategy.</p>
+      
+      
+            <p class="date">2017-03-16</p>
+      
+      <p>This article demonstrates use of the <strong>Rcpp</strong> package for fast iterations over millions of rows, and the <strong>rtweet</strong> package for communicating directly with your audience. <strong>Built with R version: 3.3.2.</strong> See the code at <a href="https://github.com/ixamin/ixamin.github.io/tree/master/code/LottoNumbers">https://github.com/ixamin/ixamin.github.io</a>.</p>
+      <p>It's a long shot, picking the grand prize number in Canada's 649 lottery, with odds of 1 in 13,983,816. It would be helpful to have frequent small wins to offset the likely recurring cost of staying in the game, hoping for the big one. To get &quot;in the money&quot; - having two out of six numbers for the same lottery (not including the bonus number) - the odds are considerably better: 1 in 8.3. The proposed strategy, then, is to pick numbers that frequently result in a match, and that have a bias toward winning a lower odds prize. The outcome will be the six out of forty-nine number combination that has the highest count of 2 or 3 number wins over all the previous draws. Let's see how to implement that strategy with <strong>R</strong>.</p>
+      <p><strong>TL;DR</strong> The code discussed in this article automatically tweets numbers for each draw of Canada's LOTTOMAX &amp; 649 lotteries. Follow @<a href="https://twitter.com/lottomoto">LottoMoto</a> on Twitter to get yours.</p>
+      <p>Before I get to the programming fun, first <strong>a caveat</strong>: don't bet more than you can afford to lose on LottoMoto's number picks. The draws are uniformly random over time <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, even though the (relatively small) set of past draw numbers may not appear to be distributed that way.</p>
+      <p><img src="index_files/figure-html/DrawDist-1.png" width="672" /></p>
+      <p>Next draw predictions cannot be based on the historical distribution of lotto numbers, despite my application of just the opposite of that principle in the following code.</p>
+      <div id="getting-the-data" class="section level4">
+      <h4>Getting the data</h4>
+      <p>Previously drawn numbers are available online. The <em>XML</em> package is used to scrape Ontario's lottery website.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Gather historical draws</span>
+      previous_draws &lt;-<span class="st"> </span><span class="kw">as.list</span>(
+        <span class="kw">sort</span>(
+          <span class="kw">as.integer</span>(
+            <span class="kw">sapply</span>(
+              XML::<span class="kw">getNodeSet</span>(
+                LOTTO649_page,
+                <span class="st">&quot;//span[@class=&#39;winning-numbers-number&#39;]&quot;</span>),
+              function(x) XML::<span class="kw">xmlValue</span>(x)
+              )
+            )
+          )
+        )</code></pre></div>
+      <p>All 13,983,816 combinations to be tested are derived from:</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Build a matrix of all possible Lotto 649 combinations</span>
+      combos &lt;-<span class="st"> </span><span class="kw">t</span>(
+        <span class="kw">combn</span>(
+          out_of,
+          amount_to_pick,
+          <span class="dt">simplify =</span> <span class="ot">TRUE</span>)
+        )</code></pre></div>
+      </div>
+      <div id="data-processing" class="section level4">
+      <h4>Data processing</h4>
+      <p>The goal is to iterate over the set of combinations, calculating a score for each based on the quality (the size of the prize), and frequency of &quot;in the money&quot; matches with previous draws.</p>
+      <p>Using only <strong>R</strong> functions to perform the iteratation will take a great deal of time. A naive approach is illustrated in the following function.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A naive function to score combination matches with previous draws </span>
+      fn_comboScore_R_iter &lt;-<span class="st"> </span>function(min_matches,combos,previous_draws) {
+        scoreboard &lt;-<span class="st"> </span><span class="kw">data.table</span>()
+        for (rc in <span class="kw">seq.int</span>(<span class="kw">nrow</span>(combos))) {
+          combo_score &lt;-<span class="st"> </span>0L
+          draw_score &lt;-<span class="st"> </span>0L
+          for (rp in <span class="kw">seq.int</span>(<span class="kw">nrow</span>(previous_draws))) {
+            picked_score &lt;-<span class="st"> </span>0L
+            for (cc in <span class="kw">seq.int</span>(<span class="kw">ncol</span>(combos))) {
+              for (cp in <span class="kw">seq.int</span>(<span class="kw">ncol</span>(previous_draws))) {
+                if (combos[rc,cc] ==<span class="st"> </span>previous_draws[[rp,cp]]) {
+                  picked_score &lt;-<span class="st"> </span>picked_score +<span class="st"> </span>1L
+                }
+              }
+            }
+            if (picked_score &gt;=<span class="st"> </span>min_matches) {
+              draw_score &lt;-<span class="st"> </span>draw_score +<span class="st"> </span>picked_score
+            }
+          }
+          combo_score &lt;-<span class="st"> </span>combo_score +<span class="st"> </span>draw_score
+          out &lt;-<span class="st"> </span><span class="kw">data.table</span>(<span class="dt">score =</span> combo_score, <span class="dt">combo_numbers =</span> <span class="kw">list</span>(combos[rc,]))
+          scoreboard &lt;-<span class="st"> </span><span class="kw">rbindlist</span>(<span class="kw">list</span>(scoreboard, out))
+          combo_score &lt;-<span class="st"> </span>0L
+        }
+        scoreboard[,idx :<span class="er">=</span><span class="st"> </span>.I]
+        <span class="kw">return</span>(scoreboard[,.(idx,score)])
+      }</code></pre></div>
+      <p>Timing the iteration function on a sequence of increasing numbers of combinations provides the basis for predicting the total elapsed time to score all the combinations...</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Gather timing for increasing numbers of combinations</span>
+      test_timings &lt;-<span class="st"> </span><span class="kw">data.table</span>()
+      <span class="kw">sapply</span>(<span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1000</span>, <span class="dt">to =</span> <span class="dv">5000</span>, <span class="dt">by =</span> <span class="dv">500</span>), function(x) {
+        <span class="kw">set.seed</span>(<span class="dv">99</span>)
+        combos &lt;-<span class="st"> </span>combos[<span class="kw">sample.int</span>(<span class="kw">nrow</span>(combos),<span class="dt">size =</span> x,<span class="dt">replace =</span> <span class="ot">FALSE</span>),]
+        score_iter_time &lt;-<span class="st"> </span><span class="kw">system.time</span>(
+          scoreboard_iter &lt;-<span class="st"> </span><span class="kw">fn_comboScore_R_iter</span>(min_matches,combos,previous_draws)
+        )
+        timings_out &lt;-<span class="st"> </span><span class="kw">data.table</span>(
+          <span class="dt">num_combos =</span> x,
+          <span class="dt">elapsed_minutes =</span> <span class="kw">round</span>(score_iter_time[[<span class="dv">1</span>]]/<span class="dv">60</span>,<span class="dv">4</span>)
+          )
+        test_timings &lt;&lt;-<span class="st"> </span><span class="kw">rbindlist</span>(<span class="kw">list</span>(test_timings,timings_out))
+      })</code></pre></div>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Predict duration for testing all combinations</span>
+      timings_model &lt;-<span class="st"> </span><span class="kw">lm</span>(elapsed_minutes ~<span class="st"> </span>num_combos,<span class="dt">data =</span> test_timings)
+      <span class="kw">predict</span>(timings_model,<span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">num_combos=</span><span class="kw">choose</span>(<span class="dv">49</span>,<span class="dv">6</span>)))</code></pre></div>
+      <p>The predicted elapsed time to score all 13,983,816 combinations against the sample LOTTO649 220 record dataset is <strong>14.9 days</strong>.</p>
+      <p>With a prize draw twice a week, taking over fourteen days to predict the numbers clearly isn't going to cut it. With R, run time may be extended if vector element type conversion is needed, and additional time is required on execution for memory management. Enter <strong>functionals</strong>, where R's typed vectors are passed to a program compiled in a lower level supporting language. The following code uses the functional <strong>apply()</strong>, written in C for performance. In contrast to R having to interpet it's program line by line at run time, the C program performs binary translation and memory allocation on all lines at compilation time. Where R can pass off work to a compiled program, the speed gains can be significant.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Score combination matches with previous draws using a functional</span>
+      fn_comboScore_R_vect &lt;-<span class="st"> </span>function(min_matches,combos,previous_draws) {
+        scoreboard &lt;-<span class="st"> </span><span class="kw">apply</span>(previous_draws,<span class="dv">1</span>,
+                            function(i) <span class="kw">apply</span>(combos,<span class="dv">1</span>,function(j) <span class="kw">length</span>(<span class="kw">intersect</span>(i,j))))
+        scoreboard[scoreboard &lt;<span class="st"> </span>min_matches] &lt;-<span class="st"> </span><span class="dv">0</span>
+        scoreboard &lt;-<span class="st"> </span><span class="kw">as.data.table</span>(scoreboard)
+        scoreboard[,score :<span class="er">=</span><span class="st"> </span><span class="kw">as.integer</span>(<span class="kw">rowSums</span>(.SD))]
+        scoreboard[,idx :<span class="er">=</span><span class="st"> </span>.I]
+        <span class="kw">return</span>(scoreboard[,.(idx,score)])
+      }</code></pre></div>
+      <p>The elapsed time prediction using the functional to score all 13,983,816 combinations is reduced to <strong>12 hours</strong>.</p>
+      <p>Still, half a day is considerable computing time. A significant further improvement can be realized by coding the iterations directly in C++ . The R code is connected to C++ by use of the <strong>Rcpp</strong> API.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Using the Rcpp package to implement R&#39;s intersect() function in C++</span></code></pre></div>
+      <div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;Rcpp.h&gt;</span>
+      NumericMatrix comboScore(<span class="dt">double</span> amount_to_pick,
+                               <span class="dt">double</span> out_of,
+                               <span class="dt">double</span> min_matches,
+                               IntegerMatrix combos,
+                               IntegerMatrix previous) {
+          <span class="co">//size of previous draws matrix</span>
+          <span class="dt">int</span> p_nrow = previous.nrow(), p_ncol = previous.ncol();
+          <span class="co">//for sizing results matrix and match iterating</span>
+          <span class="dt">int</span> c_nrow = combos.nrow(), c_ncol = combos.ncol();
+          <span class="co">//sizing of results matrix</span>
+          NumericMatrix results(c_nrow, c_ncol + <span class="dv">3</span>);
+          <span class="co">//create vector to hold the combination to be tested</span>
+          std::vector&lt;<span class="dt">int</span>&gt; combo;
+          combo.reserve(c_ncol);
+          <span class="co">//create vector to hold draw to be tested</span>
+          std::vector&lt;<span class="dt">int</span>&gt; draw;
+          draw.reserve(p_ncol);
+      
+          <span class="kw">for</span> (<span class="dt">int</span> cr = <span class="dv">0</span>; cr &lt; c_nrow; ++cr) {
+              <span class="kw">if</span>(cr % <span class="dv">100</span> == <span class="dv">0</span>) Rcpp::checkUserInterrupt();
+              <span class="co">//reset the vector of drawn numbers</span>
+              combo.clear();
+              <span class="kw">for</span> (<span class="dt">int</span> cc = <span class="dv">0</span>; cc &lt; c_ncol; ++cc) {
+                  <span class="co">//populate the combo vector with the set of numbers to be tested</span>
+                  combo.push_back(combos(cr,cc));
+              }
+              <span class="co">//sort the combo vector in prep for set_intersection function</span>
+              std::sort(combo.begin(),combo.end());
+              <span class="co">//(re)set the cr total score variable</span>
+              <span class="dt">double</span> comboScore = <span class="fl">0.0</span>;
+              <span class="co">//(re)set count of matched draws</span>
+              <span class="dt">double</span> matchedDraws = <span class="fl">0.0</span>;
+              <span class="co">//for every draw&#39;s previously drawn numbers</span>
+              <span class="kw">for</span> (<span class="dt">int</span> pr = <span class="dv">0</span>; pr &lt; p_nrow; ++pr) {
+                  <span class="co">//reset the vector of drawn numbers</span>
+                  draw.clear();
+                  <span class="co">//(re)set the combination to draw score variable</span>
+                  <span class="dt">double</span> drawScore = <span class="fl">0.0</span>;
+                  <span class="kw">for</span> (<span class="dt">int</span> pc = <span class="dv">0</span>; pc &lt; p_ncol; ++pc) {
+                      draw.push_back(previous(pr,pc));
+                  }
+                  <span class="co">//sort the draw vector in prep for set_intersection function</span>
+                  std::sort(draw.begin(),draw.end());
+      
+                  std::vector&lt;<span class="dt">int</span>&gt; match;
+                  <span class="co">//return intersection of combo and draw vectors</span>
+                  std::set_intersection(combo.begin(),combo.end(),
+                                        draw.begin(),draw.end(),
+                                        std::back_inserter(match)
+                                            );
+                  <span class="dt">int</span> match_size = match.size();
+                  <span class="co">//a secret mix of frequency and quality metrics</span>
+                  <span class="co">//is used to calculate the score...</span>
+                  SecretSauce(amount_to_pick,
+                              out_of,
+                              match_size,
+                              min_matches,
+                              matchedDraws,
+                              drawScore,
+                              comboScore);
+                  }
+              <span class="co">//keep only scores greater than zero</span>
+              <span class="kw">if</span> (comboScore &gt; <span class="dv">0</span>) {
+                  results(cr,<span class="dv">0</span>) = cr;
+                  results(cr,<span class="dv">1</span>) = comboScore;
+                  results(cr,<span class="dv">2</span>) = matchedDraws;
+                  <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">3</span>; i &lt; combo.size() + <span class="dv">3</span>; ++i) {
+                      results(cr,i) = combo[i<span class="dv">-3</span>];
+                      }
+                  }
+              }
+          <span class="kw">return</span> results;
+          }</code></pre></div>
+      <p>The elapsed time prediction using C++ to score all 13,983,816 combinations is 0.005373 of a day - that's only <strong>7.7 minutes</strong>!</p>
+      <p>Switching from the naive approach first illustrated, to the the implementation of a C++ function cuts the computational time by 99.96%. A validation step confirms the outputs resulting from all three approaches are the same...</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;Are the ITER scoreboard and VECT scoreboards the same?&quot;</span>,
+             <span class="kw">ifelse</span>(<span class="kw">identical</span>(scoreboard_iter,scoreboard_vect),<span class="st">&quot;Yes!&quot;</span>,<span class="st">&quot;No.&quot;</span>))</code></pre></div>
+      <pre><code>## [1] &quot;Are the ITER scoreboard and VECT scoreboards the same? Yes!&quot;</code></pre>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;Are the VECT scoreboard and CPP scoreboards the same?&quot;</span>,
+             <span class="kw">ifelse</span>(<span class="kw">identical</span>(scoreboard_vect,scoreboard_cpp),<span class="st">&quot;Yes!&quot;</span>,<span class="st">&quot;No.&quot;</span>))</code></pre></div>
+      <pre><code>## [1] &quot;Are the VECT scoreboard and CPP scoreboards the same? Yes!&quot;</code></pre>
+      </div>
+      <div id="publishing-the-numbers" class="section level4">
+      <h4>Publishing the Numbers</h4>
+      <p>With a scoreboard returned from the C++ comboScore function, it's a simple matter of sorting, selecting and reporting the top combination.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Score all combinations using C++; sort results to get single &quot;best&quot; outcome</span>
+      scoreboard &lt;-<span class="st"> </span><span class="kw">data.table</span>(<span class="kw">comboScore</span>(amount_to_pick,out_of,min_matches,combos,previous_draws))
+      <span class="kw">setnames</span>(scoreboard,
+               <span class="kw">c</span>(<span class="st">&quot;idx&quot;</span>,<span class="st">&quot;score&quot;</span>,<span class="st">&quot;matches&quot;</span>,<span class="st">&quot;NUMBER.1&quot;</span>,<span class="st">&quot;NUMBER.2&quot;</span>,<span class="st">&quot;NUMBER.3&quot;</span>,<span class="st">&quot;NUMBER.4&quot;</span>,<span class="st">&quot;NUMBER.5&quot;</span>,<span class="st">&quot;NUMBER.6&quot;</span>))
+      <span class="kw">setorder</span>(scoreboard,-score,-matches)
+      prediction &lt;-<span class="st"> </span>scoreboard[<span class="dv">1</span>,
+                               <span class="kw">c</span>(<span class="st">&quot;NUMBER.1&quot;</span>,<span class="st">&quot;NUMBER.2&quot;</span>,<span class="st">&quot;NUMBER.3&quot;</span>,<span class="st">&quot;NUMBER.4&quot;</span>,<span class="st">&quot;NUMBER.5&quot;</span>,<span class="st">&quot;NUMBER.6&quot;</span>)]
+      <span class="co"># prepare for prediction check...</span>
+      prediction[, <span class="st">`</span><span class="dt">:=</span><span class="st">`</span>(<span class="dt">DATE =</span> <span class="kw">as.Date</span>(<span class="kw">nextDraw</span>(lottoname)), <span class="dt">ITM_CNT =</span> <span class="dv">0</span>)]</code></pre></div>
+      <p>Publishing the result to Twitter takes only one line, thanks to the <strong>rtweet</strong> package.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Post to LottoMoto&#39;s Twitter account</span>
+      <span class="kw">post_tweet</span>(<span class="kw">paste0</span>(<span class="st">&quot;LottoMoto&#39;s &quot;</span>,
+                        <span class="kw">format</span>(<span class="kw">nextDraw</span>(lottoname),<span class="st">&quot;%b %d, %Y&quot;</span>),
+                        <span class="st">&quot; #LOTTO649 numbers are &quot;</span>,
+                        <span class="kw">paste</span>(<span class="kw">as.character</span>(scoreboard[<span class="dv">1</span>,-<span class="kw">c</span>(<span class="st">&quot;idx&quot;</span>,<span class="st">&quot;score&quot;</span>,<span class="st">&quot;matches&quot;</span>)]),<span class="dt">collapse =</span> <span class="st">&quot;, &quot;</span>),
+                        <span class="st">&quot; #dreaming. Read about LottoMoto at ixamin.com/LottoNumbers.html&quot;</span>))</code></pre></div>
+      </div>
+      <div id="good-news-everyone" class="section level4">
+      <h4>Good News, Everyone!</h4>
+      <p>Time for a reality check. Let's see just how well our strategy is working.</p>
+      <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check outcomes, and publish when the algorith gets it right</span>
+      <span class="co"># get the latest draw and last prediction...</span>
+      previous_draws &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">paste0</span>(lottoname,<span class="st">&quot;.rds&quot;</span>))
+      last_draw &lt;-<span class="st"> </span>previous_draws[.N,
+                                  <span class="kw">c</span>(<span class="st">&quot;DRAW.DATE&quot;</span>,<span class="st">&quot;NUMBER.DRAWN.1&quot;</span>,<span class="st">&quot;NUMBER.DRAWN.2&quot;</span>,<span class="st">&quot;NUMBER.DRAWN.3&quot;</span>,<span class="st">&quot;NUMBER.DRAWN.4&quot;</span>,<span class="st">&quot;NUMBER.DRAWN.5&quot;</span>,<span class="st">&quot;NUMBER.DRAWN.6&quot;</span>)]
+      predictions &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">paste0</span>(<span class="st">&quot;Predictions_&quot;</span>,lottoname,<span class="st">&quot;.rds&quot;</span>))
+      last_prediction &lt;-<span class="st"> </span>predictions[<span class="dv">1</span>,
+                                     <span class="kw">c</span>(<span class="st">&quot;DATE&quot;</span>,<span class="st">&quot;ITM_CNT&quot;</span>,<span class="st">&quot;NUMBER.1&quot;</span>,<span class="st">&quot;NUMBER.2&quot;</span>,<span class="st">&quot;NUMBER.3&quot;</span>,<span class="st">&quot;NUMBER.4&quot;</span>,<span class="st">&quot;NUMBER.5&quot;</span>,<span class="st">&quot;NUMBER.6&quot;</span>)]
+      <span class="co"># find how many numbers from the last prediction match the latest draw...</span>
+      ITM &lt;-<span class="st"> </span><span class="kw">length</span>(<span class="kw">intersect</span>(last_prediction[,-<span class="kw">c</span>(<span class="st">&quot;DATE&quot;</span>,<span class="st">&quot;ITM_CNT&quot;</span>)],last_draw[,-<span class="kw">c</span>(<span class="st">&quot;DRAW.DATE&quot;</span>)]))
+      if (ITM &gt;=<span class="st"> </span>min_matches ) {
+        <span class="co"># if &quot;in the money&quot;, update the prediction with the number of matches</span>
+          predictions[last_prediction, <span class="st">`</span><span class="dt">:=</span><span class="st">`</span>(<span class="dt">ITM_CNT=</span>ITM)]
+          last_prediction[, <span class="st">`</span><span class="dt">:=</span><span class="st">`</span>(<span class="dt">ITM_CNT=</span>ITM)]
+          <span class="co"># and tweet about winning</span>
+              <span class="kw">post_tweet</span>(<span class="kw">paste0</span>(<span class="st">&quot;#GoodNewsEveryone LottoMoto&#39;s #LOTTO649 &quot;</span>,
+                                <span class="kw">format</span>(last_prediction[,DATE],<span class="st">&quot;%b %d&quot;</span>),
+                                <span class="st">&quot; prediction matched &quot;</span>,
+                                last_prediction[,ITM_CNT],
+                                <span class="st">&quot; numbers in the &quot;</span>,
+                                <span class="kw">format</span>(last_draw[,DRAW.DATE],<span class="st">&quot;%b %d, %Y&quot;</span>),
+                                <span class="st">&quot; draw.&quot;</span>))
+              }</code></pre></div>
+      <p>The prediction and checking code runs on a local PC, scheduled to run before and after the lottery draws . Please check in on <a href="https://twitter.com/lottomoto">Twitter</a> to see how the LottoMoto bot is performing.</p>
+      </div>
+      <div class="footnotes">
+      <hr />
+      <ol>
+      <li id="fn1"><p>Pearson's chi-squared test applied to the set of historical 649 draws provides that confidence. <code>chisq_649_test &lt;- chisq.test(table(lotto_numbers))</code> results in a probability of <code>chisq_649_test$p.value</code> = 0.5749085, higher than that typically agreed to be statistically significant (0.01 or 0.05). We therefore fail to reject the null hypothesis that the 649 numbers are drawn from the Uniform distribution.<a href="#fnref1">↩</a></p></li>
+      </ol>
+      </div>
+
                 </div>
         </article>
         <aside>
           <div class="blog-sidebar">
             <h4>Hi, I'm looking for work!</h4>
-            <em><p>This site is the creation of <a href="https://www.linkedin.com/in/jhodge">Jonathan Hodge</a>, a freelance R programming Data Scientist and corporate ERP Business Intelligence Expert with Canadian Security Clearance. He has years of experience drawing insights from corporate systems built on Oracle and SQL Server databases.</p>
-            <p>Modern business strategy should be informed by data derived from sources outside of traditional database systems. The R Programming environment, deployed at an Enterprise level or stand-alone, is an ideal tool for data analysis.  The data scientist uses R to clean, interpret, visualize, and leverage statistical packages to unlock value in the data. Automation and effective communication of data analytics output results from a good knowledge of the technology stack.  The examination of topical, public domain data in these pages illustrate R's use in capable and innovative hands.</p></em>
-            <p>If you like what you see, and think I might help improve your business intelligence, let's connect:</p>
-            <strong><a href="mailto:jonathan@ixamin.com">jonathan@ixamin.com</a> or 613-296-7490</strong> (mobile)
+            <p>I add value through skillful, sensible implementations of information systems.</p>
+            <em><p>This site is the creation of <a href="https://www.linkedin.com/in/jhodge">Jonathan Hodge</a>, a Business Intelligence consultant and ERP expert. He has years of experience drawing insights from corporate systems built on Oracle and SQL Server databases.</p>
+            <p>The R Programming environment, deployed at an Enterprise level or stand-alone, is an ideal tool for analysis of data from almost any source, including the traditional database systems. The data scientist uses R to clean, interpret, visualize, and leverage statistical packages to unlock value in the data. An experienced appreciation of business requirements results in an effective communication of the analytics output.</p></em>
+              <p>The examination of topical, public domain data in these pages illustrate R's use in capable and innovative hands. If you like what you see, and think I might help improve your business intelligence, let's connect:</p>
+            <strong><a href="mailto:jonathan@ixamin.com">jonathan@ixamin.com</a> or <p>613-296-7490</strong> (mobile)</p>
             <h4>Archives</h4>
             <ol class="list-unstyled">
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles<span class="caret"></span></a>
                 <ol class="dropdown-menu">
-                  <li><a href="Ontario_Electricity_Rates.html">Ontario's Electricity Rates</a></li>
+                  <li><a href="OntarioElectricityRates.html">Ontario's Electricity Rates</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="TakeMeHome.html">Demonstration Webapp - Take Me Home!</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="LottoNumbers.html">Lotto Numbers - A winning strategy</a></li>
                   <li role="separator" class="divider"></li>
                 </ol>
               </li>
@@ -162,7 +425,7 @@ width="400" height="600" scrolling="yes"></iframe>
               </svg>
             </a>
           </p>
-          <p class="text-muted">Copyright &copy;
+          <p class="text-muted">Copyright &copy; 2016 -
             <script type="text/javascript">
               var d = new Date()
               document.write(d.getFullYear())

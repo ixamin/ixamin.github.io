@@ -403,6 +403,7 @@ code, kbd, pre, samp {
   }
   h1.title {
     font-size: 1.2em;
+    padding-top: 1.6em;
   }
   p.date {
     font-size: 0.8em;
@@ -423,6 +424,9 @@ code, kbd, pre, samp {
     margin-right: 7em;
   }
   .blog-main > p {
+    font-size: 1.1em;
+  }
+  .section > p {
     font-size: 1.1em;
   }
   p.subtitle {
